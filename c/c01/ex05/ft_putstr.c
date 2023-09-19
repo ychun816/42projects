@@ -31,4 +31,20 @@ int     main()
         char* test = "Hello!";
         ft_putstr(test);
 }
+===ac/av===
+	while (str[i])
+	{
+		write(1, &str[i++], 1);
+		i ++;
+	}
+
+#include <stdio.h>
+
+int main(int ac, char *av[])
+{
+    if (ac > 0)
+    {
+        ft_putstr(av[1]);
+    }
+}
 */

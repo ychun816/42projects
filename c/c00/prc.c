@@ -1,18 +1,15 @@
+
 #include <unistd.h>
 
-void ft_is_negative(int n)
+void ft_is_neg(int n)
 {
     if (n < 0)
         write(1, "N", 1);
-    else
+    else if (n > 0)
         write(1, "P", 1);
 }
 
-int main()
-{
-    ft_is_negative(-3);
-}
-/*
+
 #include <stdlib.h>
 int main(int ac, char *av[])
 {
@@ -21,4 +18,8 @@ int main(int ac, char *av[])
         ft_is_neg(atoi(av[1]));
     }
 }
-*/
+// int main()
+// {
+//     ft_is_neg(3);
+//     return 0;
+// }

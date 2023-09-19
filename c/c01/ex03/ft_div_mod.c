@@ -28,4 +28,20 @@ int     main()
         ft_div_mod(a, b, &d, &m);
         printf("%i %i %i %i", a, b, d, m);
 }
+===WITH AC/AV====
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int ac, char *av[])
+{
+    int m, n, di, mo;
+
+    m = atoi(av[1]);
+    n = atoi(av[2]);
+    if (ac > 0)
+    {
+        ft_div_mod(m, n, &di, &mo);
+        printf("%i %i %i %i", m, n, di, mo);
+    }
+}
 */

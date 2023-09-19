@@ -17,7 +17,7 @@ char	*ft_strcpy(char *dest, char *src)
 	int	i;
 
 	i = 0;
-	while (src[i])
+	while (src[i] != '\0');
 	{
 		dest[i] = src[i];
 		i++;
@@ -35,8 +35,8 @@ int	main(void)
 
 	dest[] = "Apple";
 	src[] = "Icecream";
-	printf("%s and %s !\n", dest, src);
+	printf("dest: %s ! src: %s !\n", dest, src);
 	ft_strcpy(dest, src);
-	printf("%s and %s , equally yum!\n", dest, src);
+	printf("%s (copied) from %s ", dest, src);
 }
 */

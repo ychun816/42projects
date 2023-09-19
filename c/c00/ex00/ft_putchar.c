@@ -13,3 +13,16 @@ int	main(void)
 	
 	ft_putchar(c);
 }
+/*
+#include <stdlib.h>
+int main(int ac, char *av[])
+{
+    if (ac > 1)
+    {
+        int input = atoi(av[1]);
+        char m = (char)input;
+        ft_putchar(m);
+    }
+    return 0;
+}
+*/

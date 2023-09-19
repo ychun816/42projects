@@ -20,7 +20,7 @@ void	ft_swap(int *a, int *b)
 	*a = *b;
 	*b = i;
 }
-/*
+/* 
 #include <stdio.h>
 
 int     main()
@@ -31,5 +31,19 @@ int     main()
         b = 5;
         ft_swap(&a, &b);
         printf("%i %i", a, b);
+}
+===WITH AC/AV===
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int ac, char *av[])
+{
+    int i, j;
+
+    i = atoi(av[1]);
+    j = atoi(av[2]);
+    if (ac > 0)
+        ft_swap(&i, &j);
+        printf("%i %i", i, j);
 }
 */

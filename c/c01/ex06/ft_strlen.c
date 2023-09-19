@@ -32,8 +32,19 @@ int     main(void)
         ptr = "Hello!";
         printf("%i", ft_strlen(ptr));
 }
-*/
-/*
+===ac/av===
+#include <stdio.h>
+int main(int ac, char *av[])
+{
+    int wordcount;
+
+    wordcount = ft_strlen(av[1]);
+    if (ac > 0)
+    {
+        printf("%i", wordcount);
+    }
+}
+===========
 char *str;
 str = "word"
 0 = 'H' => str
