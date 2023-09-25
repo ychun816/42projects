@@ -49,3 +49,46 @@ int main(void)
 {
     ft_print_comb();
 }
+/* ALTERNATIVE
+
+#include <unistd.h>
+
+void    ft_putchar(char c)
+{
+    write(1, &c, 1);
+}
+
+void    ft_print_comb(void)
+{
+    int left;
+    int mid;
+    int right;
+
+    left = 0;
+    while (left <= 7)
+    {
+        mid = left + 1;
+        while (mid <= 8)
+        {
+            right = mid + 1;
+            while (right <= 9)
+            {
+                ft_putchar(left + 48);
+                ft_putchar(mid + 48);
+                ft_putchar(right + 48);
+                if (!(left == 7 && mid == 8 && right == 9))
+                    write(1, ", ", 2);
+                    right++;
+            }
+            mid++;
+        }
+        left++;
+    }
+}
+
+int main()
+{
+    ft_print_comb();
+    return 0;
+}   
+*/
