@@ -21,38 +21,32 @@ void	ft_ultimate_div_mod(int *a, int *b)
 	*a = div;
 }
 /*
-	int	div;
-	int	mod;
-
-	div = *a / *b;
-	mod = *a % *b;
-	*a = div;
-	*b = mod;
-=================
 #include <stdio.h>
-int     main()
+int main()
 {
-        int d,m;
+    int d;
+    int m;
 
-        d = 1;
-        m = 2;
-        ft_ultimate_div_mod(&d, &m);
-        printf("%i %i", d, m);
+    d = 10;
+    m = 5;
+    ft_ultimate_div_mod(&d, &m);
+    printf("div: %i, mod: %i", d, m);
 }
-===AC/AV===
-#include <stdio.h>
-#include <stdlib.h>
 
+===================AC/AV======
+#include <stdlib.h>
 int main(int ac, char *av[])
 {
-    int m, n, di, mo;
+    int d;
+    int m;
 
-    m = atoi(av[1]);
-    n = atoi(av[2]);
+    d = atoi(av[1]);
+    m = atoi(av[2]);
+    
     if (ac > 0)
     {
-        ft_ultimate_div_mod(&m, &n);
-        printf("%i %i", m, n);
+        ft_ultimate_div_mod(&d, &m);
+        printf("div: %i, mod: %i", d, m);
     }
 }
 */

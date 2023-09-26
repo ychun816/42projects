@@ -25,26 +25,27 @@ int	ft_strlen(char *str)
 }
 /*
 #include <stdio.h>
-
-int     main(void)
+int main()
 {
-        char    *ptr;
-        ptr = "Hello!";
-        printf("%i", ft_strlen(ptr));
+    char *test;
+    int count;
+
+    test = "happy";
+    count = ft_strlen(test);
+    printf("%i", count);
 }
-===ac/av===
-#include <stdio.h>
+=============================AC/AV==========
 int main(int ac, char *av[])
 {
-    int wordcount;
+    int result;
 
-    wordcount = ft_strlen(av[1]);
     if (ac > 0)
     {
-        printf("%i", wordcount);
+        result = ft_strlen(av[1]);
+        printf("word length: %i", result);
     }
 }
-===========
+=============================
 char *str;
 str = "word"
 0 = 'H' => str

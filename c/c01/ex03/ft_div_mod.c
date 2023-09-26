@@ -19,29 +19,28 @@ void	ft_div_mod(int a, int b, int *div, int *mod)
 }
 /*
 #include <stdio.h>
-int     main()
+
+int main()
 {
-        int     a,b,d,m;
-
-        a = 10;
-        b = 5;
-        ft_div_mod(a, b, &d, &m);
-        printf("%i %i %i %i", a, b, d, m);
+    int m;
+    int n;
+    ft_div_mod(40, 9, &m, &n);
+    printf("div: %i, mod: %i", m, n);
+    return 0;
 }
-===WITH AC/AV====
-#include <stdio.h>
-#include <stdlib.h>
+===================with AC/AV=======
 
+#include <stdlib.h>
 int main(int ac, char *av[])
 {
-    int m, n, di, mo;
+    int j;
+    int k;
 
-    m = atoi(av[1]);
-    n = atoi(av[2]);
-    if (ac > 0)
+    if (ac == 3)
     {
-        ft_div_mod(m, n, &di, &mo);
-        printf("%i %i %i %i", m, n, di, mo);
+        ft_div_mod(atoi(av[1]), atoi(av[2]), &j, &k);
+        printf("div: %i, mod: %i", j, k);
+        return 0;
     }
 }
 */

@@ -17,34 +17,32 @@ void	ft_putstr(char	*str)
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (str[i] != '\0') //while(str[i]);
 	{
 		write(1, &str[i], 1);
 		i ++;
 	}
 }
 /*
-#include <stdio.h>
-
-int     main()
+int main()
 {
-        char* test = "Hello!";
-        ft_putstr(test);
+    char *test; 
+    //*can't use "char test" => too little storage for a sentence!
+    //*char is for only one/really short character!
+    //*therefore, declare a "char pointer"
+
+    test = "I'm pretty!";
+    ft_putstr(test);
+    return 0;
 }
-===ac/av===
-	while (str[i])
-	{
-		write(1, &str[i++], 1);
-		i ++;
-	}
 
-#include <stdio.h>
-
+============================AC/AV===========
 int main(int ac, char *av[])
 {
     if (ac > 0)
     {
         ft_putstr(av[1]);
+        return 0;
     }
 }
 */

@@ -14,23 +14,26 @@
 
 void	ft_swap(int *a, int *b)
 {
-	int	i;
+	int	swap;
 
-	i = *a;
+	swap = *a;
 	*a = *b;
-	*b = i;
+	*b = swap;
 }
 /* 
 #include <stdio.h>
-
-int     main()
+int main()
 {
-        int     a, b;
+    int m;
+    int n;
 
-        a = 4;
-        b = 5;
-        ft_swap(&a, &b);
-        printf("%i %i", a, b);
+    m = 3;
+    n = 4;
+
+    printf("before: m = %i, n = %i\n", m, n);
+    ft_swap(&m, &n);
+    printf("after: m = %i, n = %i\n", m, n);
+    return 0;
 }
 ===WITH AC/AV===
 #include <stdio.h>
@@ -38,12 +41,16 @@ int     main()
 
 int main(int ac, char *av[])
 {
-    int i, j;
+    int i;
+    int j;
 
     i = atoi(av[1]);
-    j = atoi(av[2]);
-    if (ac > 0)
-        ft_swap(&i, &j);
-        printf("%i %i", i, j);
+    j = atoi(av[2]); //declare i,j as int to change av[1](char) to int!
+
+    if (ac > 0) //or: if (ac == 3);
+    {
+        ft_swap(&i, &j);  // pointer to int
+        printf("after swap: %i %i", i, j);  //print out int
+    }
 }
 */
