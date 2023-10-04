@@ -1,44 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylin <ylin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/03 12:16:35 by ylin              #+#    #+#             */
-/*   Updated: 2023/07/03 22:21:36 by ylin             ###   ########.fr       */
+/*   Created: 2023/07/03 16:43:41 by ylin              #+#    #+#             */
+/*   Updated: 2023/07/05 21:44:57 by ylin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int ft_str_is_printable(char *str)
 {
-	unsigned int	index;
+    int i;
 
-	index = 0;
-	while (index < n && src[index])
-	{
-		dest[index] = src[index];
-		index++;
-	}
-	while (index < n)
-	{
-		dest[index] = '\0';
-		index++;
-	}
-	return (dest);
+    i = 0;
+    while (str[i])
+    {
+        if (!(str[i] >= 32 && str[i] <= 127))
+            return 0;
+        i++;
+    }
+    return 1;
 }
 /*
 #include <stdio.h>
-
-int	main()
+int main(int ac, char *av[])
 {
-	char dest[] = "cookies";
-	char src[] = "candy";
+    int result;
 
-	printf("%s and %s !\n", dest, src);
-	ft_strncpy(dest, src, 6);
-	printf("%s and %s , same!", dest, src);
+    if (ac == 2)
+    {
+        result = ft_str_is_printable(av[1]);
+        printf("%i", result);
+        return 0;
+    }
 }
 */

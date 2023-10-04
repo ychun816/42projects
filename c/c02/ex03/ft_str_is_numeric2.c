@@ -1,44 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylin <ylin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/03 12:16:35 by ylin              #+#    #+#             */
-/*   Updated: 2023/07/03 22:21:36 by ylin             ###   ########.fr       */
+/*   Created: 2023/07/03 16:13:00 by ylin              #+#    #+#             */
+/*   Updated: 2023/07/03 18:45:11 by ylin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int	ft_str_is_numeric(char *str)
 {
-	unsigned int	index;
+	int	i;
 
-	index = 0;
-	while (index < n && src[index])
+	i = 0;
+	while (str[i])
 	{
-		dest[index] = src[index];
-		index++;
+		if ((str[i] >= '9') || (str[i] <= '0'))
+		{
+			return (0);
+		}
+		i++;
 	}
-	while (index < n)
-	{
-		dest[index] = '\0';
-		index++;
-	}
-	return (dest);
+	return (1);
 }
 /*
 #include <stdio.h>
 
 int	main()
 {
-	char dest[] = "cookies";
-	char src[] = "candy";
+	char str1[] = "alpha";
+	char str2[] = "a2pha";
 
-	printf("%s and %s !\n", dest, src);
-	ft_strncpy(dest, src, 6);
-	printf("%s and %s , same!", dest, src);
+	ft_str_is_numeric(str1);
+	printf("%s are alphabets!\n", str1);
+	ft_str_is_numeric(str2);
+	printf("In %s found numbers!\n", str2);
 }
 */

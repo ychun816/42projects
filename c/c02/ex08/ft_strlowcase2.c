@@ -1,44 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylin <ylin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/03 12:16:35 by ylin              #+#    #+#             */
-/*   Updated: 2023/07/03 22:21:36 by ylin             ###   ########.fr       */
+/*   Created: 2023/07/03 17:31:25 by ylin              #+#    #+#             */
+/*   Updated: 2023/07/05 21:46:04 by ylin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+char *ft_strlowcase(char *str)
 {
-	unsigned int	index;
+    int i;
 
-	index = 0;
-	while (index < n && src[index])
-	{
-		dest[index] = src[index];
-		index++;
-	}
-	while (index < n)
-	{
-		dest[index] = '\0';
-		index++;
-	}
-	return (dest);
+    i = 0;
+    while (str[i])
+    {
+        if (str[i] >= 'A' && str[i] <= 'Z')
+            str[i] = str[i] + 32;
+        i++;
+    }
+    return (str);
 }
 /*
 #include <stdio.h>
-
-int	main()
+int main(int ac, char *av[])
 {
-	char dest[] = "cookies";
-	char src[] = "candy";
+    char *result;
 
-	printf("%s and %s !\n", dest, src);
-	ft_strncpy(dest, src, 6);
-	printf("%s and %s , same!", dest, src);
+    if (ac == 2)
+    {
+        result = ft_strlowcase(av[1]);
+        printf("lowerised: %s\n", result);
+    }
 }
 */
