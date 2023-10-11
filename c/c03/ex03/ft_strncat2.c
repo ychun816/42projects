@@ -10,51 +10,48 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
-{
-	int				i;
-	unsigned int	j;
 
-	i = 0;
-	j = 0;
-	while (dest[i])
-	{
-		i++;
-	}
-	while (src[j] && j < nb)
+char *ft_strncat(char *dest, char *src, unsigned int nb)
+{
+    int i;
+    unsigned int j;
+
+    i = 0;
+    j = 0;
+    while (dest[i])
+    {
+        i++;
+    }
+    while (src[j] && j <= nb)
 	{
 		dest[i + j] = src[j];
 		j++;
 	}
-	dest[i + j] = '\0';
-	return (dest);
+    dest[i + j] = '\0'; 
+    return (dest);
 }
+
 /*
 #include <stdio.h>
-
-int	main()
+int     main()
 {
-	char m[] = "Hello!";
-	char n[] = "Friend!";
+    char text1[] = "hey!";
+    char text2[] = "YOU";
+    char *result;
 
-	printf("%s",ft_strncat(m, n, 20));
+    result = ft_strncat(text1, text2, 3);
+    printf("%s\n", result);
 }
-
-char	*ft_strcat(char *dest, char *src)
+=========================AC/AV======
+#include <stdlib.h>
+int main(int ac, char *av[])
 {
-	int	i;
-	int	j;
+    char *result;
 
-	i = 0;
-	j = 0;
-	while (dest[i])
-		i++;
-	while (src[j])
-	{
-		// dest[i + j] = src[j];
-		j++;
-	}
-	// dest[i + j] = src[j];
-	return (dest);
+    if (ac > 0)
+    {
+        result = ft_strncat(av[1], av[2], atoi(av[3]));
+        printf("%s\n", result);
+    }
 }
 */
